@@ -18,7 +18,7 @@ directory and run this command in `bazel-toolchain` directory:
 ```
   $ ./rbe_configs_gen \
        --bazel_version=4.1.0 \
-       --toolchain_container=l.gcr.io/google/rbe-ubuntu18-04:latest \
+       --toolchain_container=gcr.io/$PROJECT_NAME/rbe-ubuntu18-04:latest \
        --output_src_root=/home/<user>/projects/rbe_autoconfig \
        --exec_os=linux \
        --target_os=linux

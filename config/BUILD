@@ -42,7 +42,7 @@ platform(
         "@bazel_tools//tools/cpp:clang",
     ],
     exec_properties = {
-        "container-image": "docker://l.gcr.io/google/rbe-ubuntu18-04@sha256:48b67b41118dbcdfc265e7335f454fbefa62681ab8d47200971fc7a52fb32054",
+        "container-image": "docker://gcr.io/api-project-164060093628/rbe-ubuntu18-04@sha256:00d248350be6a76bd1c93d77c90826e7754388a7e9f9299d4a8f4bdae29219dd",
         "OSFamily": "Linux",
     },
 )
