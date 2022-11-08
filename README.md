@@ -1,7 +1,7 @@
 #### RBE toolchain config for a given combination of Bazel release and docker image
 
 Clone the [bazel-toolchain](https://github.com/bazelbuild/bazel-toolchains.git)
-project and checkout `v5.1.0` tag.
+project and checkout `v5.1.2` tag.
 
 Build the `rbe_configs_gen` with the following command:
 
@@ -17,7 +17,7 @@ directory and run this command in `bazel-toolchain` directory:
 
 ```
   $ ./rbe_configs_gen \
-       --bazel_version=4.1.0 \
+       --bazel_version=5.3.2 \
        --toolchain_container=gcr.io/$PROJECT_NAME/rbe-ubuntu18-04:latest \
        --output_src_root=/home/<user>/projects/rbe_autoconfig \
        --exec_os=linux \
