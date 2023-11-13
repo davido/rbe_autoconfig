@@ -1,7 +1,7 @@
 #### RBE toolchain config for a given combination of Bazel release and docker image
 
 Clone the [bazel-toolchain](https://github.com/bazelbuild/bazel-toolchains.git)
-project and checkout `v5.1.2` tag.
+project.
 
 Build the `rbe_configs_gen` with the following command:
 
@@ -17,30 +17,14 @@ directory and run this command in `bazel-toolchain` directory:
 
 ```
   $ ./rbe_configs_gen \
-       --bazel_version=5.3.2 \
-       --toolchain_container=gcr.io/$PROJECT_NAME/rbe-ubuntu18-04:latest \
-       --output_src_root=/home/<user>/projects/rbe_autoconfig \
-       --exec_os=linux \
-       --target_os=linux
+    --bazel_version=6.4.0 \
+    --toolchain_container=gcr.io/bazel-public/ubuntu2004-java11@sha256:833b20afd7b624693160c8e9f8aafaee46657d29d32e61012256aa3d045d8662 \
+    --output_src_root=/path/to/repo \
+    --output_config_path=path/to/config-directory \
+    --exec_os=linux \
+    --target_os=linux \
+    --cpp_env_json=ubuntu2004.json
 ```
-
-To replace JDK 8 with JDK 11 the following diff was applied:
-
-```diff
-diff --git a/java/BUILD b/java/BUILD
-index 237e5c1..7c6ab59 100755
---- a/java/BUILD
-+++ b/java/BUILD
-@@ -20,5 +20,5 @@ package(default_visibility = ["//visibility:public"])
- java_runtime(
-     name = "jdk",
-     srcs = [],
--    java_home = "/usr/lib/jvm/11.29.3-ca-jdk11.0.2/reduced",
-+    java_home = "/usr/lib/jvm/java-8-openjdk-amd64",
- )
-```
-
-See also this [related issue upstream](https://github.com/bazelbuild/bazel-toolchains/issues/961).
 
 Conduct new release on GitHub and upload `tar.gz` archive to GCloud bucket.
 Consume the new release from Gerrit project:
