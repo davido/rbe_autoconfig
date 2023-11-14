@@ -18,12 +18,28 @@ directory and run this command in `bazel-toolchain` directory:
 ```
   $ ./rbe_configs_gen \
     --bazel_version=6.4.0 \
-    --toolchain_container=gcr.io/bazel-public/ubuntu2004-java11@sha256:833b20afd7b624693160c8e9f8aafaee46657d29d32e61012256aa3d045d8662 \
+    --toolchain_container=gcr.io/api-project-164060093628/ubuntu2004-java17@sha256:9ccbb639a9df8a31f25b86a205e9bd8ce007d49e58257528188dbe0e448a3c58 \
     --output_src_root=/path/to/repo \
     --output_config_path=path/to/config-directory \
     --exec_os=linux \
     --target_os=linux \
-    --cpp_env_json=ubuntu2004.json
+    --cpp_env_json=ubuntu2204.json
+```
+
+Used ubuntu2204.json file:
+
+```
+{
+  "ABI_LIBC_VERSION": "glibc_2.19",
+  "ABI_VERSION": "gcc",
+  "BAZEL_COMPILER": "gcc",
+  "BAZEL_HOST_SYSTEM": "i686-unknown-linux-gnu",
+  "BAZEL_TARGET_CPU": "k8",
+  "BAZEL_TARGET_LIBC": "glibc_2.19",
+  "BAZEL_TARGET_SYSTEM": "x86_64-unknown-linux-gnu",
+  "CC": "gcc",
+  "CC_TOOLCHAIN_NAME": "linux_gnu_x86"
+}
 ```
 
 Conduct new release on GitHub and upload `tar.gz` archive to GCloud bucket.
