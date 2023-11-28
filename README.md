@@ -18,8 +18,7 @@ directory and run this command in `bazel-toolchain` directory:
 ```
   $ ./rbe_configs_gen \
     --bazel_version=6.4.0 \
-    --toolchain_container=gcr.io/api-project-164060093628/ubuntu2004-java17@sha256:9ccbb639a9df8a31f25b86a205e9bd8ce007d49e58257528188dbe0e448a3c58 \
-    --output_src_root=/path/to/repo \
+    --toolchain_container=gcr.io/bazel-public/ubuntu2204-java17@sha256:ffe37746a34537d8e73cef5a20ccd3a4e3ec7af3e7410cba87387ba97c0e520f \
     --output_config_path=path/to/config-directory \
     --exec_os=linux \
     --target_os=linux \
