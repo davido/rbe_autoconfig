@@ -48,11 +48,11 @@ Consume the new release from Gerrit project:
 WORKSPACE
 ```python
 http_archive(
-    name = "rbe_jdk11",
-    sha256 = "3c1307c35776dcc8e31c693685d690d9d4ef97b6bb8b55459f9b4b5ad3b8da14",
-    strip_prefix = "rbe_autoconfig-1.0.0",
+    name = "ubuntu2204_jdk21",
+    sha256 = "8ea82b81c9707e535ff93ef5349d11e55b2a23c62bcc3b0faaec052144aed87d",
+    strip_prefix = "rbe_autoconfig-5.1.0",
     urls = [
-        "https://github.com/davido/rbe_autoconfig/archive/v1.0.0.tar.gz",
+        "https://github.com/davido/rbe_autoconfig/releases/download/v5.1.0/v5.1.0.tar.gz",
     ],
 )
 
