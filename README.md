@@ -58,3 +58,12 @@ http_archive(
 
 ```
 
+MODULE.bazel
+```python
+bazel_dep(name = "rbe_autoconfig")
+git_override(
+    module_name = "rbe_autoconfig",
+    remote = "https://github.com/davido/rbe_autoconfig",
+    commit = "e1677949eca2abe4c37e5f5b2a69529deb44a3d4",
+)
+```
